@@ -14,20 +14,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    int mChangeImageIndex = 0;
+
     public void catButton(View view) {
 
         ImageView catImage = (ImageView) findViewById(R.id.catImageView);
 
-        ImageView name = (ImageView) findViewById(R.id.catImageView);
 
+        if (mChangeImageIndex == 0) {
 
+            catImage.setImageResource(R.drawable.cat2);
+            mChangeImageIndex = 1;
 
+        }else {
 
-        Log.i("Value", name.toString());
-
-        catImage.setImageResource(R.drawable.cat2);
-
-//        catImage.setImageDrawable(getResources().getDrawable(R.drawable.monkey, getApplicationContext().getTheme()));
+            catImage.setImageResource(R.drawable.cat1);
+            mChangeImageIndex = 0;
+        }
 
     }
 
